@@ -1,0 +1,7 @@
+## RAG and Vector Database Libraries
+# We are using LangChain for the pipeline and ChromaDB for the vector store
+langchain
+langchain-core
+langchain-community
+chromadb
+sentence-transformers
