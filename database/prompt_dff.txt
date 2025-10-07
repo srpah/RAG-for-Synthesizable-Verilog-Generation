@@ -1,0 +1,38 @@
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - input clk
+ - input d
+ - output q
+
+The module should implement a single D flip-flop. Assume all sequential
+logic is triggered on the positive edge of the clock.
+
+
+#Code Llama Output
+
+Here's an example implementation of a TopModule with the given interface:
+```scss
+module TopModule(input clk, input d, output q);
+  always @(posedge clk) begin
+    if (d == 1) begin
+      q <= 0;
+    end else begin
+      q <= 1;
+    end
+  end
+endmodule
+```
+This module has three inputs: `clk`, `d`, and `q`. The input `clk` is the clock signal, which determines when
+sequential logic is triggered. The input `d` is the data input, which determines the value of the flip-flop on the
+positive edge of the clock. The output `q` is the current value of the flip-flop.
+
+The module uses the `always @(posedge clk)` construct to specify that the sequential logic should be triggered on
+the positive edge of the clock. Inside this block, the module checks whether the input `d` is high (i.e., 1) or
+low (i.e., 0), and updates the output accordingly. The `if-else` statement is used to ensure that the output is
+updated correctly even if the input `d` is unknown (i.e., X) or high-impedance (i.e., Z).
+
+Note that this implementation assumes that all inputs are single bits, and that the output is also a single bit.
+If you want to handle multi-bit inputs and outputs, you can use an array of `reg` variables instead of a single
+`reg` variable for the output.
